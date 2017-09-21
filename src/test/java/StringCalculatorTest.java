@@ -1,21 +1,28 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class StringCalculatorTest {
+    StringCalculator calc;
+
+    @Before
+    public void setUp() {
+        calc = new StringCalculator();
+    }
 
     @Test
     public void itReturnsZeroWhenTheStringIsEmpty() {
-        assertEquals(0, StringCalculator.add(""));
+        assertEquals(0, calc.add(""));
     }
 
     @Test
     public void itReturnsTheNumberIfTheStringIsOnlyANumber() {
-        assertEquals(1, StringCalculator.add("1"));
+        assertEquals(1, calc.add("1"));
     }
 
     @Test
     public void itReturnsTwoNumbersSummedIfTheyAreSeperatedByAComma() {
-        assertEquals(2, StringCalculator.add("1,1"));
+        assertEquals(2, calc.add("1,1"));
     }
 }
